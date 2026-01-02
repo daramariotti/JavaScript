@@ -11,10 +11,15 @@ function calcular() {
   let data = new Date();
   let anoatual = data.getFullYear();
 
-  if (fano.value.length == 0 || ano > anoatual) {
+  let sexo = document.getElementsByName("sexo");
+
+  if (
+    fano.value.length == 0 ||
+    ano > anoatual ||
+    (!sexo[0].checked && !sexo[1].checked)
+  ) {
     window.alert("[ERRO] Verifique os dados e tente novamente");
   } else {
-    let sexo = document.getElementsByName("sexo");
     let idade = anoatual - ano;
     let genero = " ";
 
