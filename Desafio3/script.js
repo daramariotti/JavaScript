@@ -4,8 +4,6 @@ verificar.addEventListener("click", calcular);
 function calcular() {
   let fano = document.querySelector("#ano");
   let ano = Number(fano.value);
-  let feminino = document.querySelector("#sexfem");
-  let masculino = document.querySelector("#sexmas");
   let res = document.querySelector(".res");
 
   let data = new Date();
