@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+#form {
+  padding: 20px;
+}
+
+div {
+  padding: 10px;
+}
+
+label {
+  font-size: 20px;
+}
+
+#botao {
+  width: 80px;
+  height: 30px;
+  font-size: 15px;
+}
