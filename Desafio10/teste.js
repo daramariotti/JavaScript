@@ -1,12 +1,17 @@
 const formulario = document.querySelector("#formImc");
 
 formulario.addEventListener("submit", function (event) {
-  event.preventDefault(formulario);
+  event.preventDefault();
 
-  const dadosForm = new FormData(formulario);
+  const resultadoBloco = document.querySelector("#resultado");
+  resultadoBloco.innerHTML = "";
 
   const listaDeErros = document.querySelectorAll(".error");
+  listaDeErros.forEach((div) => (div.innerHTML = ""));
+
+  const dadosForm = new FormData(formulario);
   let indice = 0;
+  let formularioValido = true;
 
   for (let [campo, valor] of dadosForm.entries()) {
     const divDeErroAtual = listaDeErros[indice];
@@ -14,54 +19,40 @@ formulario.addEventListener("submit", function (event) {
     if (valor.trim() === "") {
       const newError = document.createElement("p");
       newError.textContent = "Preencha este campo!";
-
-      divDeErroAtual.innerHTML = "";
       divDeErroAtual.appendChild(newError);
-    } else {
-      divDeErroAtual.innerHTML = "";
-      console.log(campo, valor);
-    }
 
+      formularioValido = false;
+    }
     indice++;
   }
-  let resultadoCalculo = calculo(
-    dadosForm.get("peso"),
-    dadosForm.get("altura")
-  ).toFixed(2);
 
-  let nome = dadosForm.get("nome");
+  if (formularioValido) {
+    const peso = parseFloat(dadosForm.get("peso"));
+    const altura = parseFloat(dadosForm.get("altura"));
+    const nome = dadosForm.get("nome");
 
-  const resultadoBloco = document.querySelector("#resultado");
+    const valorImc = calculoImc(peso, altura).toFixed(2);
 
-  let resultado = document.createElement("p");
+    const resultado = document.createElement("p");
 
-  if (resultadoCalculo < 18.5) {
-    resultado.textContent = `${nome}, seu IMC é ${resultadoCalculo}. Você está na categoria: Abaixo do peso (Magreza)`;
+    if (valorImc < 18.5) {
+      resultado.textContent = `${nome}, seu IMC é ${valorImc}. Categoria: Abaixo do peso.`;
+      resultado.classList.add("resultado-abaixo");
+    } else if (valorImc < 24.9) {
+      resultado.textContent = `${nome}, seu IMC é ${valorImc}. Categoria: Peso normal.`;
+      resultado.classList.add("resultado-normal");
+    } else if (valorImc < 29.9) {
+      resultado.textContent = `${nome}, seu IMC é ${valorImc}. Categoria: Sobrepeso.`;
+      resultado.classList.add("resultado-sobrepeso");
+    } else {
+      resultado.textContent = `${nome}, seu IMC é ${valorImc}. Categoria: Obesidade.`;
+      resultado.classList.add("resultado-obesidade");
+    }
+
     resultadoBloco.appendChild(resultado);
-    resultado.classList.toggle("resultado-abaixo");
-  } else if (resultadoCalculo < 24.9) {
-    resultado.textContent = `${nome}, seu IMC é ${resultadoCalculo}. Você está na categoria: Peso normal, ideal`;
-    resultadoBloco.appendChild(resultado);
-    resultado.classList.toggle("resultado-normal");
-  } else if (resultadoCalculo < 29.9) {
-    resultado.textContent = `${nome}, seu IMC é ${resultadoCalculo}. Você está na categoria: Sobrepeso (pré-obesidade)`;
-    resultadoBloco.appendChild(resultado);
-    resultado.classList.toggle("resultado-sobrepeso");
-  } else if (resultadoCalculo < 34.9) {
-    resultado.textContent = `${nome}, seu IMC é ${resultadoCalculo}. Você está na categoria: Obesidade grau I`;
-    resultadoBloco.appendChild(resultado);
-    resultado.classList.toggle("resultado-obesidade");
-  } else if (resultadoCalculo < 39.9) {
-    resultado.textContent = `${nome}, seu IMC é ${resultadoCalculo}. Você está na categoria: Obesidade grau II (severa)`;
-    resultadoBloco.appendChild(resultado);
-    resultado.classList.toggle("resultado-obesidade");
-  } else {
-    resultado.textContent = `${nome}, seu IMC é ${resultadoCalculo}. Você está na categoria: Obesidade grau III (mórbida ou grave) `;
-    resultadoBloco.appendChild(resultado);
-    resultado.classList.toggle("resultado-obesidade");
   }
 });
 
-function calculo(peso, altura) {
+function calculoImc(peso, altura) {
   return peso / (altura * altura);
 }
