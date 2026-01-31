@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#containerPrincipal {
+  width: 90vw;
+}
+
+.containerFilho {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+main {
+  width: 65vw;
+  padding: 70px;
+}
+
+aside {
+  width: 23vw;
+}

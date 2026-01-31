@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+body {
+  font-size: 15px;
+}
+
+.titulo {
+  font-size: 20px;
+}
+
+.linhaForm {
+  gap: 10px;
+}
+
+#logo {
+  width: 300px;
+}
+
+main,
+aside {
+  padding: 45px;
+}

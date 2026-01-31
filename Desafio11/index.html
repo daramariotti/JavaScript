@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto HashForrms</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="./style/medium.css"
+      media="screen and (min-width: 768px)"
+    />
+    <link
+      rel="stylesheet"
+      href="./style/large.css"
+      media="screen and (min-width: 1024px)"
+    />
+  </head>
+  <body>
+    <div id="containerPrincipal">
+      <header>
+        <img src="./imagens/logoTech.png" alt="Logo TechNovio" id="logo" />
+      </header>
+      <div class="containerFilho">
+        <main>
+          <p class="titulo">Meus Dados</p>
+          <p class="texto">
+            Confirme seus dados.Eles aparecerão em sua nota fiscal.
+          </p>
+          <form action="" method="post" autocomplete="on" id="form">
+            <div class="blocoForm">
+              <fieldset id="dadosPesoais">
+                <legend>Dados pessoais</legend>
+                <div class="linhaForm">
+                  <label for="nome">Nome:</label>
+                  <input
+                    type="text"
+                    class="campoObr"
+                    name="nome"
+                    id="nome"
+                    placeholder="Digite seu nome"
+                  />
+                </div>
+                <div class="linhaForm">
+                  <label for="cpf">CPF:</label>
+                  <input
+                    type="number"
+                    class="campoObr"
+                    name="cpf"
+                    id="cpf"
+                    placeholder="Digite seu CPF"
+                  />
+                </div>
+                <div class="linhaForm">
+                  <label for="telefone">Telefone:</label>
+                  <input
+                    type="number"
+                    class="campoObr"
+                    name="telefone"
+                    id="telefone"
+                    placeholder="Digite seu telefone"
+                  />
+                </div>
+              </fieldset>
+            </div>
+            <div class="blocoForm">
+              <fieldset id="endereco">
+                <legend>Endereço</legend>
+                <div class="linhaForm">
+                  <label for="cep">CEP:</label>
+                  <input
+                    type="number"
+                    class="campoObr"
+                    name="cep"
+                    id="cep"
+                    placeholder="Digite seu CEP"
+                  />
+                </div>
+                <div class="linhaForm">
+                  <label for="rua">Rua:</label>
+                  <input
+                    type="text"
+                    class="campoObr"
+                    name="rua"
+                    id="rua"
+                    placeholder="Digite sua rua"
+                  />
+                </div>
+                <div class="linhaForm">
+                  <label for="numero">Número:</label>
+                  <input
+                    type="number"
+                    class="campoObr"
+                    name="numero"
+                    id="numero"
+                    placeholder="Digite o número da sua casa"
+                  />
+                </div>
+                <div class="linhaForm">
+                  <label for="complemento">Complemento:</label>
+                  <input
+                    type="text"
+                    name="complemento"
+                    id="complemento"
+                    placeholder="Complemento"
+                  />
+                </div>
+                <div class="linhaForm">
+                  <label for="bairro">Bairro:</label>
+                  <input
+                    type="text"
+                    class="campoObr"
+                    name="bairro"
+                    id="bairro"
+                    placeholder="Digite seu bairro"
+                  />
+                </div>
+                <div class="linhaForm">
+                  <label for="cidade">Cidade:</label>
+                  <input
+                    type="text"
+                    class="campoObr"
+                    name="cidade"
+                    id="cidade"
+                    placeholder="Digite sua cidade"
+                  />
+                </div>
+                <div class="linhaForm">
+                  <label for="estado">Estado:</label>
+                  <select class="campoObr" name="estado" id="estado">
+                    <option value="" disabled selected hidden>Selecione</option>
+                    <option value=""></option>
+                    <option value="AC">AC</option>
+                    <option value="AL">AL</option>
+                    <option value="AP">AP</option>
+                    <option value="AM">AM</option>
+                    <option value="BA">BA</option>
+                    <option value="CE">CE</option>
+                    <option value="DF">DF</option>
+                    <option value="ES">ES</option>
+                    <option value="GO">GO</option>
+                    <option value="MA">MA</option>
+                    <option value="MT">MT</option>
+                    <option value="MS">MS</option>
+                    <option value="MG">MG</option>
+                    <option value="PA">PA</option>
+                    <option value="PB">PB</option>
+                    <option value="PR">PR</option>
+                    <option value="PE">PE</option>
+                    <option value="PI">PI</option>
+                    <option value="RJ">RJ</option>
+                    <option value="RN">RN</option>
+                    <option value="RS">RS</option>
+                    <option value="RO">RO</option>
+                    <option value="RR">RR</option>
+                    <option value="SC">SC</option>
+                    <option value="SP">SP</option>
+                    <option value="SE">SE</option>
+                    <option value="TO">TO</option>
+                  </select>
+                </div>
+              </fieldset>
+            </div>
+            <div>
+              <button type="submit">AVANÇAR</button>
+            </div>
+          </form>
+        </main>
+        <aside>
+          <p class="titulo">Resumo</p>
+          <p class="texto">
+            Black Friday - Lote 01: R$ <span class="valor">1.200,00</span>
+          </p>
+          <p class="texto">
+            Total: 12x R$ <span class="valorParc">100,00</span> ou R$
+            <span class="valor">1.200,00</span> à vista
+          </p>
+          <hr />
+          <p class="textoDesc">Aplicar cupom de desconto</p>
+          <p class="texto">
+            Preço Total: R$ <span class="valor">1.200,00</span>
+          </p>
+          <hr />
+          <p class="titulo">Você tem 15 dias de garantia</p>
+          <p class="texto">
+            Experimente! Se não gostar ou ver que não é para você, devolvemos o
+            seu dinheiro! Sem letras miúdas.
+          </p>
+          <p id="infoSeg">Suas informações estão seguras</p>
+          <img src="./imagens/safety.png" alt="Guaranteed Safety" />
+          <hr />
+        </aside>
+      </div>
+      <footer>
+        <a href="http://" target="_blank">Termos de Uso | </a>
+        <a href="http://" target="_blank">Política de Privacidade</a>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
