@@ -39,6 +39,7 @@
                     name="nome"
                     id="nome"
                     placeholder="Digite seu nome"
+                    required
                   />
                 </div>
                 <div class="linhaForm">
@@ -49,6 +50,7 @@
                     name="cpf"
                     id="cpf"
                     placeholder="Digite seu CPF"
+                    required
                   />
                 </div>
                 <div class="linhaForm">
@@ -59,6 +61,7 @@
                     name="telefone"
                     id="telefone"
                     placeholder="Digite seu telefone"
+                    required
                   />
                 </div>
               </fieldset>
@@ -74,6 +77,7 @@
                     name="cep"
                     id="cep"
                     placeholder="Digite seu CEP"
+                    required
                   />
                 </div>
                 <div class="linhaForm">
@@ -84,6 +88,7 @@
                     name="rua"
                     id="rua"
                     placeholder="Digite sua rua"
+                    required
                   />
                 </div>
                 <div class="linhaForm">
@@ -94,6 +99,7 @@
                     name="numero"
                     id="numero"
                     placeholder="Digite o número da sua casa"
+                    required
                   />
                 </div>
                 <div class="linhaForm">
@@ -113,6 +119,7 @@
                     name="bairro"
                     id="bairro"
                     placeholder="Digite seu bairro"
+                    required
                   />
                 </div>
                 <div class="linhaForm">
@@ -123,11 +130,12 @@
                     name="cidade"
                     id="cidade"
                     placeholder="Digite sua cidade"
+                    required
                   />
                 </div>
                 <div class="linhaForm">
                   <label for="estado">Estado:</label>
-                  <select class="campoObr" name="estado" id="estado">
+                  <select class="campoObr" name="estado" id="estado" required>
                     <option value="" disabled selected hidden>Selecione</option>
                     <option value=""></option>
                     <option value="AC">AC</option>
@@ -176,9 +184,17 @@
             <span class="valor">1.200,00</span> à vista
           </p>
           <hr />
-          <p class="textoDesc">Aplicar cupom de desconto</p>
+          <div id="campoCupom">
+            <p class="textoDesc">Aplicar cupom de desconto</p>
+            <span>^</span>
+          </div>
+          <div class="cupom">
+            <input type="text" id="textDesc" />
+            <button type="button" id="btnAplicar">Aplicar</button>
+          </div>
+          <div id="campoDesc"></div>
           <p class="texto">
-            Preço Total: R$ <span class="valor">1.200,00</span>
+            Preço Total: R$ <span id="valorDesc">1.200,00</span>
           </p>
           <hr />
           <p class="titulo">Você tem 15 dias de garantia</p>
@@ -196,6 +212,7 @@
         <a href="http://" target="_blank">Política de Privacidade</a>
       </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="./script/scriptGeral.js"></script>
+    <script src="./script/scriptCupom.js"></script>
   </body>
 </html>

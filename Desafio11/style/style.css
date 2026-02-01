@@ -66,6 +66,7 @@ legend,
 .textoDesc {
   font-weight: bold;
   color: #f48523;
+  margin-bottom: 10px;
 }
 
 #infoSeg {
@@ -121,6 +122,38 @@ footer {
 
 footer > a {
   text-decoration: none;
-
   color: #f48523;
+}
+
+#btnAplicar {
+  max-width: 20%;
+  background-color: #f48523;
+  border: 1px solid #f48523;
+}
+
+#textDesc {
+  width: 80%;
+  margin: 0px;
+}
+
+.cupom {
+  display: none;
+}
+
+#campoCupom {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+#campoCupom > span {
+  color: #f48523;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#campoDesc {
+  color: #f48523;
+  font-weight: bold;
+  padding-top: 10px;
 }

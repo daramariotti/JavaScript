@@ -17,3 +17,7 @@ main {
 aside {
   width: 23vw;
 }
+
+#btnAplicar {
+  max-width: 140px;
+}
